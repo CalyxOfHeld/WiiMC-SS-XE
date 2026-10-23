@@ -1219,11 +1219,10 @@ int main(int argc, char *argv[])
 	SuspendParseThread();
 	StopGX();
 
-	// WiiFin next (Settings > Jellyfin, or Exit when WiiFin started this
-	// one, where the loader would be): its DOL read while mounted
+	// WiiFin next (Settings > Jellyfin; Exit exits as always): its DOL
+	// read while mounted
 	bool toWiiFin = false;
-	if(!ShutdownRequested && (LaunchWiiFin || (wiifinPath[0] &&
-		WiiSettings.exitAction != EXIT_POWEROFF && WiiSettings.exitAction != EXIT_WIIMENU)))
+	if(!ShutdownRequested && LaunchWiiFin)
 		toWiiFin = WiiFinLoad();
 
 	UnmountAllDevices();
