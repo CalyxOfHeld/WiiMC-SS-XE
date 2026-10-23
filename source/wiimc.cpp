@@ -26,6 +26,7 @@
 #include "utils/FreeTypeGX.h"
 #include "utils/gettext.h"
 #include "utils/mem2_manager.h"
+#include "utils/wiifin.h"
 #include "video.h"
 #include "networkop.h"
 #include "menu.h"
@@ -1044,7 +1045,9 @@ void setOption(char* key, char* valuePointer){
 	
 	unsigned int i = 0;
 	for(i=0; i<12; i++){
-		if(!strcmp("path", key)) {
+		if(!strcmp("wiifin", key)) {
+			snprintf(wiifinPath, sizeof(wiifinPath), "%s", valuePointer);
+		} else if(!strcmp("path", key)) {
 			sprintf(loadedFile, valuePointer);
 			AutobootExit = true;
 		} else if(!strcmp("theme", key)) {
@@ -1215,12 +1218,23 @@ int main(int argc, char *argv[])
 	SuspendDeviceThread();
 	SuspendParseThread();
 	StopGX();
+
+	// WiiFin next (Settings > Jellyfin, or Exit when WiiFin started this
+	// one, where the loader would be): its DOL read while mounted
+	bool toWiiFin = false;
+	if(!ShutdownRequested && (LaunchWiiFin || (wiifinPath[0] &&
+		WiiSettings.exitAction != EXIT_POWEROFF && WiiSettings.exitAction != EXIT_WIIMENU)))
+		toWiiFin = WiiFinLoad();
+
 	UnmountAllDevices();
 
 	AUDIO_StopDMA();
 	AUDIO_RegisterDMACallback(NULL);
 
 	SaveLogToSD();
+
+	if(toWiiFin)
+		WiiFinGo(); // returns only if it could not
 
 	if(ShutdownRequested || WiiSettings.exitAction == EXIT_POWEROFF)
 		SYS_ResetSystem(SYS_POWEROFF, 0, 0);

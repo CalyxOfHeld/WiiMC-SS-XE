@@ -34,6 +34,7 @@
 #include "filebrowser.h"
 #include "utils/gettext.h"
 #include "utils/http.h"
+#include "utils/wiifin.h"
 #include "utils/playlog.h"
 #include "filelist.h"
 
@@ -1293,8 +1294,7 @@ static void *GuiThread (void *arg)
 			ssTimer_2 = 0;
 		}
 
-		if(userInput[0].wpad->data_present > 0 || (userInput[0].pad.btns_d > 0 &&
-											userInput[0].pad.btns_d != 0x1000) ||
+		if(userInput[0].wpad->data_present > 0 || userInput[0].pad.btns_d > 0 ||
 											userInput[0].pad.stickX < -36 ||
 											userInput[0].pad.stickY < -36 ||
 											userInput[0].pad.stickX > 36 ||
@@ -1357,7 +1357,7 @@ static void *GuiThread (void *arg)
 		CheckSleepTimer();
 
 		if(userInput[0].wpad->btns_d & (WPAD_BUTTON_HOME | WPAD_CLASSIC_BUTTON_HOME) ||
-				userInput[0].pad.btns_d & PAD_BUTTON_START || userInput[0].cpad.data.down & CTR_BUTTON_START)
+				userInput[0].cpad.data.down & CTR_BUTTON_START)
 			ExitRequested = true; // exit program
 			//ResumeScreensaverThread(); // for quicker testing
 
@@ -6745,6 +6745,8 @@ static void MenuSettings()
 	sprintf(options.name[i++], "Online Media");
 	sprintf(options.name[i++], "Network");
 	sprintf(options.name[i++], "Subtitles");
+	sprintf(options.name[i++], "Jellyfin");
+	sprintf(options.name[i++], "Exit");
 
 	options.length = i;
 
@@ -6818,6 +6820,13 @@ static void MenuSettings()
 				break;
 			case 6:
 				ChangeMenuNoHistory(MENU_SETTINGS_SUBTITLES);
+				break;
+			case 7: // WiiFin, in WiiMC's place
+				LaunchWiiFin = true;
+				ExitRequested = true;
+				break;
+			case 8:
+				ExitRequested = true;
 				break;
 		}
 
