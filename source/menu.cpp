@@ -6745,8 +6745,8 @@ static void MenuSettings()
 	sprintf(options.name[i++], "Online Media");
 	sprintf(options.name[i++], "Network");
 	sprintf(options.name[i++], "Subtitles");
-	sprintf(options.name[i++], "Jellyfin");
-	sprintf(options.name[i++], "Exit");
+	sprintf(options.name[i++], "Jellyfin (WiiFin)");
+	sprintf(options.name[i++], "Exit to HBC");
 
 	options.length = i;
 
