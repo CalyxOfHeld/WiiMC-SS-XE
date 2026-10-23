@@ -8,6 +8,8 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
+#include <dirent.h>
 
 #include "wiifin.h"
 
@@ -87,11 +89,81 @@ static bool loadFrom(const char* path)
 	return true;
 }
 
+/* a DOL there and sound: its header read, its entry point in the Wii's
+ * memory (not an empty or half-copied file) */
+static bool dolThere(const char* path)
+{
+	FILE* f = openDol(path);
+	if(!f) return false;
+	u8 head[0x100];
+	bool ok = fread(head, 1, sizeof(head), f) == sizeof(head);
+	fclose(f);
+	u32 entry = (u32)head[0xE0] << 24 | (u32)head[0xE1] << 16 | (u32)head[0xE2] << 8 | head[0xE3];
+	return ok && (entry & 0xF0000000) == 0x80000000;
+}
+
+/* an app in apps/ whose meta.xml names it WiiFin (a folder of another
+ * name), its boot.dol into out ("sd:/apps/NAME/boot.dol") */
+static bool scanApps(const char* dev, const char* mounted, char* out, size_t outLen)
+{
+	char dir[64];
+	snprintf(dir, sizeof(dir), "%s/apps/", mounted);
+	DIR* d = opendir(dir);
+	if(!d) return false;
+	bool found = false;
+	struct dirent* e;
+	while(!found && (e = readdir(d)) != NULL)
+	{
+		if(e->d_name[0] == '.') continue;
+		char meta[320], buf[1024];
+		snprintf(meta, sizeof(meta), "%s%s/meta.xml", dir, e->d_name);
+		FILE* f = fopen(meta, "rb");
+		if(!f) continue;
+		size_t n = fread(buf, 1, sizeof(buf) - 1, f);
+		fclose(f);
+		buf[n] = 0;
+		char* a = strstr(buf, "<name>");
+		char* b = a ? strstr(a, "</name>") : NULL;
+		if(!a || !b) continue;
+		*b = 0;
+		bool wiifin = false;
+		for(char* p = a + 6; *p && !wiifin; p++)
+			wiifin = strncasecmp(p, "wiifin", 6) == 0;
+		if(!wiifin) continue;
+		snprintf(out, outLen, "%s/apps/%s/boot.dol", dev, e->d_name);
+		found = dolThere(out);
+	}
+	closedir(d);
+	return found;
+}
+
+/* WiiFin's DOL, as WiiFin names its devices (sd:, usb:) */
+static bool findWiiFin(char* out, size_t outLen)
+{
+	const char* usual[3] = { wiifinPath, "sd:/apps/WiiFin/boot.dol", "usb:/apps/WiiFin/boot.dol" };
+	for(int i = 0; i < 3; i++)
+		if(usual[i][0] && dolThere(usual[i])) { snprintf(out, outLen, "%s", usual[i]); return true; }
+	if(scanApps("sd:", "sd1:", out, outLen)) return true;
+	for(int m = 1; m < 6; m++)
+	{
+		char mounted[8];
+		snprintf(mounted, sizeof(mounted), "usb%d:", m);
+		if(scanApps("usb:", mounted, out, outLen)) return true;
+	}
+	return false;
+}
+
+bool WiiFinFound()
+{
+	char p[256];
+	return dol != NULL || findWiiFin(p, sizeof(p));
+}
+
 bool WiiFinLoad()
 {
 	if(dol) return true;
-	if(wiifinPath[0] && loadFrom(wiifinPath)) return true;
-	return loadFrom("sd:/apps/WiiFin/boot.dol") || loadFrom("usb:/apps/WiiFin/boot.dol");
+	char p[256];
+	return findWiiFin(p, sizeof(p)) && loadFrom(p);
 }
 
 void WiiFinGo()

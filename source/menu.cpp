@@ -6821,7 +6821,12 @@ static void MenuSettings()
 			case 6:
 				ChangeMenuNoHistory(MENU_SETTINGS_SUBTITLES);
 				break;
-			case 7: // WiiFin, in WiiMC's place
+			case 7: // WiiFin, in WiiMC's place; not there: WiiMC stays
+				if(!WiiFinFound())
+				{
+					InfoPrompt("WiiFin not found", "Put WiiFin in sd:/apps/WiiFin/ to use Jellyfin from here.");
+					break;
+				}
 				LaunchWiiFin = true;
 				ExitRequested = true;
 				break;
