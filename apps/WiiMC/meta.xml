@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <app version="1">
-  <name>WiiMC-SS</name>
+  <name>WiiMC-SS XE</name>
   <version>3.0.0</version>
   <coder>SuperrSonic</coder>
   <release_date>2025</release_date>
   <ahb_access/>
-  <short_description>Wii Media Player</short_description>
+  <short_description>Wii Media Player with WiiFin-XE integration</short_description>
   <long_description>An updated version of WiiMC.
 
 It can now display cover art for popular audio formats

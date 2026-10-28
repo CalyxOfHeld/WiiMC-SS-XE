@@ -1,3 +1,14 @@
+# WiiMC-SS XE
+
+A modified version of [WiiMC-SS](https://github.com/SuperrSonic/WiiMC-SSLC) by SuperrSonic, enhanced with seamless [WiiFin-XE](https://github.com/CalyxOfHeld/WiiFin-XE) integration.
+
+## ✨ XE Features
+- **Switch to WiiFin:** Launch WiiFin directly from `Settings > Jellyfin (WiiFin)`.
+- **Local Media handoff:** When launched from WiiFin-XE's Local Media feature, exiting brings you straight back to WiiFin.
+- **Fail-safe detection:** Checks SD and USB paths and validates the DOL header before attempting to switch, displaying a notice if WiiFin is missing rather than exiting or hanging.
+
+---
+
 # WiiMC-SS features:
 - Embedded cover art in MP3, MP4 (AAC, ALAC), FLAC, OGG, WMA, and AIFF.
 - Dynamic cover art updating from Tunein, Yggdrasil Radio, and ANISON.FM.
