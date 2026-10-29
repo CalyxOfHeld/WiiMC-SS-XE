@@ -4,3 +4,4 @@
 build/*.h
 wiimc.dol
 wiimc.elf
+build/site/

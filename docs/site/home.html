@@ -1,0 +1,122 @@
+<!-- The landing page's content; tools/make_site.py puts it in template.html -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1><img src="img/logo.png" alt="WiiMC-SS XE" width="228" height="48"></h1>
+      <p class="lede">The standalone media center for Nintendo Wii and vWii, enhanced with seamless WiiFin-XE integration</p>
+      <div class="actions">
+        <a class="btn primary" href="getting-started.html">Get started</a>
+        <a class="btn" href="whats-new.html">What's new in XE</a>
+      </div>
+      <p class="fine">Plays DVDs, SD cards, and USB hard drives directly on your console without needing a server. Free and open source.</p>
+    </div>
+
+    <nav class="menu" aria-label="Pages, laid out like the Wii Menu">
+      <ul class="channels">
+        <li><a class="ch xe" href="whats-new.html" title="What's new in XE"><img src="img/icon.png" alt="WiiMC-SS XE" width="128" height="48"></a></li>
+        <li><a class="ch" href="user-guide.html#videos"><svg aria-hidden="true"><use href="#i-film"/></svg>Videos</a></li>
+        <li><a class="ch" href="user-guide.html#music"><svg aria-hidden="true"><use href="#i-music"/></svg>Music</a></li>
+        <li><a class="ch" href="user-guide.html#dvd"><svg aria-hidden="true"><use href="#i-disc"/></svg>DVDs</a></li>
+        <li><a class="ch" href="user-guide.html#online-media-radio"><svg aria-hidden="true"><use href="#i-radio"/></svg>Radio</a></li>
+        <li><a class="ch" href="whats-new.html#wiifin-xe-integration"><svg aria-hidden="true"><use href="#i-switch"/></svg>WiiFin Bridge</a></li>
+        <li><a class="ch" href="codecs.html"><svg aria-hidden="true"><use href="#i-play"/></svg>Codecs</a></li>
+        <li><a class="ch" href="user-guide.html#controls-and-navigation"><svg aria-hidden="true"><use href="#i-pad"/></svg>Controllers</a></li>
+        <li><a class="ch" href="getting-started.html"><svg aria-hidden="true"><use href="#i-usb"/></svg>SD &amp; USB</a></li>
+        <li><a class="ch" href="faq.html"><svg aria-hidden="true"><use href="#i-help"/></svg>FAQ</a></li>
+        <li><a class="ch" href="building.html"><svg aria-hidden="true"><use href="#i-code"/></svg>Building</a></li>
+        <li><span class="ch empty" aria-hidden="true"></span></li>
+      </ul>
+      <div class="bar"><span class="clock" id="clock">20:00</span><span id="date">Wii</span></div>
+    </nav>
+  </div>
+</section>
+
+<div class="specs">
+  <div class="wrap">
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-screen"/></svg><span><b>True 720x480p</b> tiled rendering</span></li>
+      <li><svg aria-hidden="true"><use href="#i-usb"/></svg><span>Direct <b>SD &amp; USB</b> FAT32 playback</span></li>
+      <li><svg aria-hidden="true"><use href="#i-disc"/></svg><span>Full <b>DVD-Video</b> playback</span></li>
+      <li><svg aria-hidden="true"><use href="#i-music"/></svg><span><b>Dynamic Cover Art</b> for audio &amp; radio</span></li>
+      <li><svg aria-hidden="true"><use href="#i-switch"/></svg><span><b>WiiFin-XE</b> switch &amp; return</span></li>
+    </ul>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <p class="kicker">Overview</p>
+    <h2>A complete, self-contained media center for your Wii</h2>
+    <p class="intro">WiiMC-SS XE plays your video files, audio collection, radio streams, and physical DVDs directly off your SD card, USB hard drive, or disc drive — no transcoding server or PC required.</p>
+
+    <div class="jellyfin-notice">
+      <div class="notice-icon"><svg aria-hidden="true"><use href="#i-switch"/></svg></div>
+      <div class="notice-content">
+        <h3>Paired with WiiFin-XE for the complete Wii media experience</h3>
+        <p><strong>WiiFin-XE</strong> streams your library from a remote Jellyfin server with a modern Netflix-style row interface. <strong>WiiMC-SS XE</strong> plays files directly from your physical media (SD card, USB hard drive, and DVDs).</p>
+        <p>With XE integration, you can switch seamlessly between both apps: jump to WiiFin from WiiMC's settings menu, and return directly to WiiFin when exiting from Local Media.</p>
+        <p class="notice-sub"><em>Learn more about our companion streaming app at <a href="https://calyxofheld.github.io/WiiFin-XE/" target="_blank" rel="noopener"><strong>WiiFin-XE</strong></a>.</em></p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-film"/></svg>Smooth Video Playback</h3>
+        <p>True 720x480p tiled rendering, MPEG-2 interlaced display, 30 fps vsync in 480i/p modes, and optional <code>.dash</code> deblock skipping for fast H.264 playback.</p>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-music"/></svg>Music &amp; Embedded Cover Art</h3>
+        <p>Plays MP3, MP4/AAC, ALAC, FLAC, OGG, WMA, AIFF, and looping game audio (ADX, BRSTM) with full embedded and folder cover art.</p>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-radio"/></svg>Online Radio Streams</h3>
+        <p>Listen to SHOUTcast and internet radio streams with dynamic live cover art updates from TuneIn, Yggdrasil Radio, and ANISON.FM, plus automatic reconnect on dropouts.</p>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-disc"/></svg>DVD Playback</h3>
+        <p>Direct DVD-Video playback with DVD menu navigation and full chapter/audio/subtitle selection on compatible Wii disc drives.</p>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-switch"/></svg>WiiFin-XE Bridge</h3>
+        <p>Switch between WiiFin-XE and WiiMC-SS XE with one click. Automatic fail-safe verification checks device paths and DOL headers before switching.</p>
+      </div>
+      <div>
+        <h3><svg aria-hidden="true"><use href="#i-pad"/></svg>All Controllers Supported</h3>
+        <p>Pick up a Wii Remote, Classic Controller, GameCube controller, Nintendo 3DS, or plug in a USB keyboard for effortless couch navigation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="install">
+  <div class="wrap">
+    <p class="kicker">Install</p>
+    <h2>On your Wii in three steps</h2>
+    <p class="intro">You only need a softmodded Wii or vWii with the Homebrew Channel, and an SD card or USB storage drive.</p>
+    <ol class="steps">
+      <li><h3>Copy to your SD card or USB drive</h3><p>Extract the release archive so that <code>boot.dol</code>, <code>meta.xml</code>, and <code>icon.png</code> are located in <code>sd:/apps/wiimc/</code> (or <code>usb:/apps/wiimc/</code>).</p></li>
+      <li><h3>Launch from Homebrew Channel</h3><p>Open the Homebrew Channel, find <strong>WiiMC-SS XE</strong>, and press Start.</p></li>
+      <li><h3>Enjoy your media</h3><p>Browse your videos, audio folders, or DVDs with your favorite controller.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="kicker">Controls</p>
+    <h2>Pick up any controller</h2>
+    <p class="intro">Every screen supports full D-pad and analog stick navigation. The <a href="user-guide.html#controls-and-navigation">User Guide</a> covers full button shortcuts.</p>
+    <div class="table-scroll">
+      <table class="controls">
+        <thead><tr><th>Wii Remote (Wiimote)</th><th>Classic Controller</th><th>GameCube Controller</th><th>Nintendo 3DS</th><th>USB Keyboard</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><span class="glyph round">A</span></td><td><span class="glyph round">a</span></td><td><span class="glyph round gc-a">A</span></td><td><span class="glyph round">A</span></td><td><span class="glyph">Enter</span></td><td>Select / Play / Confirm</td></tr>
+          <tr><td><span class="glyph round">B</span></td><td><span class="glyph round">b</span></td><td><span class="glyph round gc-b">B</span></td><td><span class="glyph round">B</span></td><td><span class="glyph">Esc</span></td><td>Back / Stop playback</td></tr>
+          <tr><td><span class="glyph round">D-pad</span></td><td><span class="glyph round">D-pad / Left Stick</span></td><td><span class="glyph round">D-pad / Control Stick</span></td><td><span class="glyph round">Circle Pad / D-pad</span></td><td><span class="glyph">Arrow Keys</span></td><td>Navigate menus / Seek</td></tr>
+          <tr><td><span class="glyph round">-</span> <span class="glyph round">+</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">-</span> <span class="glyph">+</span></td><td>Volume / Page Up &amp; Down</td></tr>
+          <tr><td><span class="glyph">HOME</span></td><td><span class="glyph">HOME</span></td><td><span class="glyph">START</span></td><td><span class="glyph">START</span></td><td><span class="glyph">Pause</span></td><td>Exit / Settings Menu</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
