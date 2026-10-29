@@ -81,8 +81,8 @@
         <p>Switch between WiiFin-XE and WiiMC-SS XE with one click. Automatic fail-safe verification checks device paths and DOL headers before switching.</p>
       </div>
       <div>
-        <h3><svg aria-hidden="true"><use href="#i-pad"/></svg>All Controllers Supported</h3>
-        <p>Pick up a Wii Remote, Classic Controller, GameCube controller, Nintendo 3DS, or plug in a USB keyboard for effortless couch navigation.</p>
+        <h3><svg aria-hidden="true"><use href="#i-pad"/></svg>Controller Support</h3>
+        <p>Pick up a Wii Remote with pointer controls, Classic Controller, GameCube controller, or Nintendo 3DS for effortless couch navigation.</p>
       </div>
     </div>
   </div>
@@ -101,20 +101,147 @@
   </div>
 </section>
 
-<section class="block">
+<section class="block" id="controls">
   <div class="wrap">
     <p class="kicker">Controls</p>
-    <h2>Pick up any controller</h2>
-    <p class="intro">Every screen supports full D-pad and analog stick navigation. The <a href="user-guide.html#controls-and-navigation">User Guide</a> covers full button shortcuts.</p>
+    <h2>Pick up your favorite controller</h2>
+    <p class="intro">WiiMC-SS XE supports the Wii Remote (including IR pointer navigation), Classic Controller, GameCube controller, and Nintendo 3DS.</p>
+
+    <h3>Menu &amp; File Browsing</h3>
     <div class="table-scroll">
       <table class="controls">
-        <thead><tr><th>Wii Remote (Wiimote)</th><th>Classic Controller</th><th>GameCube Controller</th><th>Nintendo 3DS</th><th>USB Keyboard</th><th>Action</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Wii Remote</th>
+            <th>Classic Controller</th>
+            <th>GameCube Controller</th>
+            <th>Nintendo 3DS</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td><span class="glyph round">A</span></td><td><span class="glyph round">a</span></td><td><span class="glyph round gc-a">A</span></td><td><span class="glyph round">A</span></td><td><span class="glyph">Enter</span></td><td>Select / Play / Confirm</td></tr>
-          <tr><td><span class="glyph round">B</span></td><td><span class="glyph round">b</span></td><td><span class="glyph round gc-b">B</span></td><td><span class="glyph round">B</span></td><td><span class="glyph">Esc</span></td><td>Back / Stop playback</td></tr>
-          <tr><td><span class="glyph round">D-pad</span></td><td><span class="glyph round">D-pad / Left Stick</span></td><td><span class="glyph round">D-pad / Control Stick</span></td><td><span class="glyph round">Circle Pad / D-pad</span></td><td><span class="glyph">Arrow Keys</span></td><td>Navigate menus / Seek</td></tr>
-          <tr><td><span class="glyph round">-</span> <span class="glyph round">+</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">L</span> <span class="glyph">R</span></td><td><span class="glyph">-</span> <span class="glyph">+</span></td><td>Volume / Page Up &amp; Down</td></tr>
-          <tr><td><span class="glyph">HOME</span></td><td><span class="glyph">HOME</span></td><td><span class="glyph">START</span></td><td><span class="glyph">START</span></td><td><span class="glyph">Pause</span></td><td>Exit / Settings Menu</td></tr>
+          <tr>
+            <td><strong>Point &amp; Click</strong></td>
+            <td>IR Pointer + <span class="glyph round">A</span></td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><strong>Select / Open</strong></td>
+            <td><span class="glyph round">A</span></td>
+            <td><span class="glyph round">A</span></td>
+            <td><span class="glyph round gc-a">A</span></td>
+            <td><span class="glyph round">A</span></td>
+          </tr>
+          <tr>
+            <td><strong>Back / Up One Level</strong></td>
+            <td><span class="glyph round">B</span></td>
+            <td><span class="glyph round">B</span></td>
+            <td><span class="glyph round gc-b">B</span></td>
+            <td><span class="glyph round">B</span></td>
+          </tr>
+          <tr>
+            <td><strong>Navigate Lists</strong></td>
+            <td><span class="glyph">D-Pad</span></td>
+            <td><span class="glyph">D-Pad</span> / Left Stick</td>
+            <td><span class="glyph">D-Pad</span> / Control Stick</td>
+            <td>Circle Pad / <span class="glyph">D-Pad</span></td>
+          </tr>
+          <tr>
+            <td><strong>Volume Up / Playlist Add</strong></td>
+            <td><span class="glyph round">+</span></td>
+            <td><span class="glyph round">+</span></td>
+            <td><span class="glyph bean">Y</span></td>
+            <td><span class="glyph round">Y</span></td>
+          </tr>
+          <tr>
+            <td><strong>Volume Down / Playlist Clear</strong></td>
+            <td><span class="glyph round">&minus;</span></td>
+            <td><span class="glyph round">&minus;</span></td>
+            <td><span class="glyph bean">X</span></td>
+            <td><span class="glyph round">X</span></td>
+          </tr>
+          <tr>
+            <td><strong>Exit to HBC / Wii Menu</strong></td>
+            <td><span class="glyph">HOME</span></td>
+            <td><span class="glyph">HOME</span></td>
+            <td><span class="glyph">START</span></td>
+            <td><span class="glyph">START</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top: 32px;">Video Playback</h3>
+    <div class="table-scroll">
+      <table class="controls">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Wii Remote</th>
+            <th>Classic Controller</th>
+            <th>GameCube Controller</th>
+            <th>Nintendo 3DS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Play / Pause</strong></td>
+            <td><span class="glyph round">A</span> (or click screen)</td>
+            <td><span class="glyph round">A</span></td>
+            <td><span class="glyph round gc-a">A</span></td>
+            <td><span class="glyph round">A</span></td>
+          </tr>
+          <tr>
+            <td><strong>Toggle OSD / Controls Bar</strong></td>
+            <td><span class="glyph round">1</span></td>
+            <td><span class="glyph round">1</span></td>
+            <td><span class="glyph round gc-b">B</span></td>
+            <td><span class="glyph round">B</span></td>
+          </tr>
+          <tr>
+            <td><strong>Fast Forward / Rewind</strong></td>
+            <td><span class="glyph">D-Pad Right</span> / <span class="glyph">Left</span></td>
+            <td><span class="glyph">D-Pad Right</span> / <span class="glyph">Left</span></td>
+            <td><span class="glyph">D-Pad Right</span> / <span class="glyph">Left</span></td>
+            <td><span class="glyph">D-Pad Right</span> / <span class="glyph">Left</span></td>
+          </tr>
+          <tr>
+            <td><strong>Next Subtitle Track</strong></td>
+            <td><span class="glyph">D-Pad Up</span></td>
+            <td><span class="glyph">D-Pad Up</span></td>
+            <td><span class="glyph">D-Pad Up</span></td>
+            <td><span class="glyph">D-Pad Up</span></td>
+          </tr>
+          <tr>
+            <td><strong>Next Audio Track</strong></td>
+            <td><span class="glyph">D-Pad Down</span></td>
+            <td><span class="glyph">D-Pad Down</span></td>
+            <td><span class="glyph">D-Pad Down</span></td>
+            <td><span class="glyph">D-Pad Down</span></td>
+          </tr>
+          <tr>
+            <td><strong>Adjust Volume</strong></td>
+            <td>Hold <span class="glyph round">+</span> / <span class="glyph round">&minus;</span></td>
+            <td>Hold <span class="glyph round">+</span> / <span class="glyph round">&minus;</span></td>
+            <td>Hold <span class="glyph bean">Y</span> / <span class="glyph bean">X</span></td>
+            <td>Hold <span class="glyph round">Y</span> / <span class="glyph round">X</span></td>
+          </tr>
+          <tr>
+            <td><strong>Screen Zoom &amp; Aspect Ratio</strong></td>
+            <td>Hold <span class="glyph round">B</span> + <span class="glyph">D-Pad</span></td>
+            <td>Hold <span class="glyph round">B</span> + <span class="glyph">D-Pad</span></td>
+            <td>Hold <span class="glyph">Z</span> + <span class="glyph">D-Pad</span></td>
+            <td>Hold <span class="glyph">L</span> + <span class="glyph">D-Pad</span></td>
+          </tr>
+          <tr>
+            <td><strong>Stop Video &amp; Return</strong></td>
+            <td><span class="glyph">HOME</span></td>
+            <td><span class="glyph">HOME</span></td>
+            <td><span class="glyph">START</span></td>
+            <td><span class="glyph">START</span></td>
+          </tr>
         </tbody>
       </table>
     </div>

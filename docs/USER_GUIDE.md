@@ -53,12 +53,29 @@ Insert a standard DVD-Video into your Wii console and select the **DVD** icon fr
 
 ## Controls and Navigation
 
-| Button (Wiimote) | Classic Controller | GameCube Controller | Nintendo 3DS | USB Keyboard | Function |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **A** | **A** | **A** | **A** | **Enter** | Select / Open / Play |
-| **B** | **B** | **B** | **B** | **Esc** | Back / Cancel / Stop |
-| **D-Pad** | **D-Pad / Left Stick** | **D-Pad / Control Stick** | **Circle Pad / D-Pad** | **Arrow Keys** | Navigate / Seek |
-| **- / +** | **L / R** | **L / R** | **L / R** | **- / +** | Volume Adjust / Page Nav |
-| **1** | **Y** | **Y** | **Y** | **F1** | Context Menu / Action Bar |
-| **2** | **X** | **X** | **X** | **F2** | Toggle View / Info |
-| **HOME** | **HOME** | **START** | **START** | **Pause** | Exit / Settings Menu |
+WiiMC-SS XE supports the Wii Remote (including full IR pointer navigation), Classic Controller, GameCube controller, and Nintendo 3DS.
+
+### Menu & File Browsing
+
+| Action | Wii Remote | Classic Controller | GameCube Controller | Nintendo 3DS |
+| :--- | :--- | :--- | :--- | :--- |
+| **Point & Click** | IR Pointer + **A** | &mdash; | &mdash; | &mdash; |
+| **Select / Open** | **A** | **A** | **A** | **A** |
+| **Back / Up One Level** | **B** | **B** | **B** | **B** |
+| **Navigate Lists** | **D-Pad** | **D-Pad** / Left Stick | **D-Pad** / Control Stick | Circle Pad / **D-Pad** |
+| **Volume Up / Add to Playlist** | **+** | **+** | **Y** | **Y** |
+| **Volume Down / Clear Playlist** | **-** | **-** | **X** | **X** |
+| **Exit to HBC / Wii Menu** | **HOME** | **HOME** | **START** | **START** |
+
+### Video Playback
+
+| Action | Wii Remote | Classic Controller | GameCube Controller | Nintendo 3DS |
+| :--- | :--- | :--- | :--- | :--- |
+| **Play / Pause** | **A** (or click video) | **A** | **A** | **A** |
+| **Toggle OSD / Action Bar** | **1** | **1** | **B** | **B** |
+| **Fast Forward / Rewind** | **D-Pad Right** / **Left** | **D-Pad Right** / **Left** | **D-Pad Right** / **Left** | **D-Pad Right** / **Left** |
+| **Next Subtitle Track** | **D-Pad Up** | **D-Pad Up** | **D-Pad Up** | **D-Pad Up** |
+| **Next Audio Track** | **D-Pad Down** | **D-Pad Down** | **D-Pad Down** | **D-Pad Down** |
+| **Adjust Volume** | Hold **+** / **-** | Hold **+** / **-** | Hold **Y** / **X** | Hold **Y** / **X** |
+| **Screen Zoom & Position** | Hold **B** + **D-Pad** | Hold **B** + **D-Pad** | Hold **Z** + **D-Pad** | Hold **L** + **D-Pad** |
+| **Stop Video & Return** | **HOME** | **HOME** | **START** | **START** |
